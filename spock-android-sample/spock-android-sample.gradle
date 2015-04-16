@@ -45,6 +45,11 @@ android {
   lintOptions {
     abortOnError false
   }
+
+  sourceSets {
+    androidTest.java.srcDirs = ['src/androidTest/groovy', 'src/sharedTest/groovy']
+    test.java.srcDirs = ['src/test/groovy', 'src/sharedTest/groovy']
+  }
 }
 
 // Used for forcing to get the latest snapshot of spock-android very build
@@ -53,7 +58,9 @@ configurations.all {
 }
 
 dependencies {
-  compile 'org.codehaus.groovy:groovy:2.4.1:grooid'
+  compile 'org.codehaus.groovy:groovy:2.4.3:grooid'
+
+  testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
 
   androidTestCompile "com.andrewreitz:spock-android:$project.version${isSnapshot ? "" : "-SNAPSHOT"}"
   androidTestCompile('org.spockframework:spock-core:1.0-groovy-2.4') {

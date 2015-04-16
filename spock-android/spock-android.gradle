@@ -41,7 +41,7 @@ android {
 }
 
 dependencies {
-  compile 'org.codehaus.groovy:groovy:2.4.1:grooid'
+  compile 'org.codehaus.groovy:groovy:2.4.3:grooid'
 
   compile 'com.android.support.test:testing-support-lib:0.1'
 
